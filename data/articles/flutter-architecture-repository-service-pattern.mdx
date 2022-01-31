@@ -7,6 +7,9 @@ author: Robert Brunhage
 date: 02-01-2022
 ---
 
+import emailSignup from "../../components/emailForm/forms/emailSignup";
+import blogShareFooter from "../../components/footer/blogShareFooter/blogShareFooter";
+
 The repository-service is not a new pattern, but it is powerful. I have
 personally used it for quite some time, and now I wanted to share it with you
 all.
@@ -144,17 +147,20 @@ class AnimalService {
 }
 ```
 
-On purpose I didn't do any kind of error handling to keep the code to a minimum,
-but if you would like to see that, make sure to share the article. This is
-something I cover in-depth in my course, but in general requires a quite large
-blog post! For something that is free, I made a personal project open-source
-that implements
+On purpose, I didn't do any kind of error handling to keep the code to a
+minimum. But if you would like to see that, make sure to share the article. This
+is something I cover in-depth in my course, but it requires a quite large blog
+post! For something free, I made a personal project open-source that implements
 [this pattern](https://github.com/RobertBrunhage/budget_together).
+
+<div className="blog_post_component">
+  <emailSignup color={"var(--secondary-bg-color)"} />
+</div>
 
 ## The end result
 
-Thanks to this pattern we have gotten a very clean way to interract with our
-backend data.
+Thanks to this pattern we have gotten a clean way to interact with our backend
+data.
 
 ```dart
 // Imagine this has some fancy ui and this would be the method call.
@@ -180,3 +186,7 @@ the
 And Matthew Jones about his
 [service-repository article](https://exceptionnotfound.net/the-repository-service-pattern-with-dependency-injection-and-asp-net-core/)
 that I highly recommend reading through.
+
+<div className="blog_post_component">
+  <blogShareFooter message="Robert's new article about repository-service pattern in Flutter is great, highly recommend it!" />
+</div>

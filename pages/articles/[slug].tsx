@@ -4,6 +4,8 @@ import "prismjs";
 import Prism from "prismjs";
 import "prismjs/components/prism-dart";
 import React, { useEffect, useRef } from "react";
+import emailSignup from "../../components/emailForm/forms/emailSignup";
+import blogShareFooter from "../../components/footer/blogShareFooter/blogShareFooter";
 import Layout from "../../components/layout/layout";
 import {
   formatSlug,
@@ -37,6 +39,8 @@ interface ArticleProps {
   content: MDXRemoteSerializeResult<Record<string, unknown>>;
   slug: string;
 }
+
+const components = { emailSignup, blogShareFooter };
 
 export default function Article({ frontMatter, content, slug }: ArticleProps) {
   const articleRef = useRef<HTMLDivElement>(null);
@@ -77,7 +81,7 @@ export default function Article({ frontMatter, content, slug }: ArticleProps) {
         <h1 className={styles.title}>{frontMatter.title}</h1>
         <h4 className={styles.quote}>{frontMatter.readingTime.text}</h4>
         <div className={styles.markdown}>
-          <MDXRemote {...content} />
+          <MDXRemote {...content} components={components} />
         </div>
       </article>
     </Layout>

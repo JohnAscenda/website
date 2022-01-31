@@ -1,0 +1,16 @@
+.container {
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		li{
+			// Override the margin gotten from the blog styles
+			margin: 0 !important; 
+      		display: inline-block;
+			&:hover{
+				// enlarge the image on hover
+				transform: scale(1.1);
+			}
+		}
+	}
+}
